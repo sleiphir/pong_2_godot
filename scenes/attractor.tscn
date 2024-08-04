@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyfhali0amqjo"]
+
+[ext_resource type="Script" path="res://scripts/attractor.gd" id="1_n4bgn"]
+[ext_resource type="Shader" path="res://shaders/distortion.gdshader" id="1_ydfyu"]
+[ext_resource type="Texture2D" uid="uid://br6mi4yr3geud" path="res://icon.svg" id="3_k0av3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b38gv"]
+shader = ExtResource("1_ydfyu")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.2
+shader_parameter/size = 0.525
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqylb"]
+radius = 320.0
+
+[node name="Attractor" type="Area2D"]
+gravity_space_override = 1
+gravity_point = true
+gravity = 1800.0
+script = ExtResource("1_n4bgn")
+
+[node name="Shader" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_b38gv")
+position = Vector2(3.05176e-05, 3.05176e-05)
+scale = Vector2(5, 5)
+texture = ExtResource("3_k0av3")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lqylb")

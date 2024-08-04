@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://hsfwrquxcrj2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jk4no"]
+load_path = "res://.godot/imported/wall.png-6b1d64fa3ea5498e75707962a9c3b56c.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12snf"]
+size = Vector2(960, 12)
+
+[node name="Wall" type="StaticBody2D"]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(480, 6)
+scale = Vector2(1.6, 1.2)
+texture = SubResource("CompressedTexture2D_jk4no")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(480, 6)
+shape = SubResource("RectangleShape2D_12snf")

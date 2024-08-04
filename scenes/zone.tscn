@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8eox0k6tdhmj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnrex"]
+size = Vector2(32, 608)
+
+[node name="Zone" type="StaticBody2D"]
+scale = Vector2(2, 2)
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(16, 304)
+shape = SubResource("RectangleShape2D_bnrex")

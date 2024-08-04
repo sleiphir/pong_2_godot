@@ -1,0 +1,92 @@
+[gd_scene load_steps=3 format=3 uid="uid://3gys21iysaug"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_f5cqc"]
+[ext_resource type="FontFile" uid="uid://kdll5p8auxdg" path="res://assets/airstrikebold.ttf" id="2_li16r"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_f5cqc")
+
+[node name="ScoreLeft" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 16.0
+offset_right = -64.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_li16r")
+theme_override_font_sizes/font_size = 96
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreRight" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_li16r")
+theme_override_font_sizes/font_size = 96
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = -220.0
+offset_right = 286.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_li16r")
+theme_override_font_sizes/font_size = 48
+text = "Press <space> to start"
+
+[node name="LaunchBallMessage" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -376.0
+offset_right = 295.0
+offset_bottom = -347.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_li16r")
+theme_override_font_sizes/font_size = 32
+text = "press <space> to launch the ball"
+
+[node name="Timer" type="Timer" parent="LaunchBallMessage"]
+wait_time = 5.0
+autostart = true
+
+[node name="Title" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -43.5
+offset_right = 196.0
+offset_bottom = 43.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_li16r")
+theme_override_font_sizes/font_size = 100
+text = "Pong 2"
+
+[connection signal="timeout" from="LaunchBallMessage/Timer" to="." method="_on_timer_timeout"]

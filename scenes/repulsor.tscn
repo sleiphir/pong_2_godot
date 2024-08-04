@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cunfceads5dtm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhc1p"]
+size = Vector2(960, 40)
+
+[node name="Repulsor" type="Area2D"]
+scale = Vector2(2, 2)
+gravity_space_override = 1
+gravity = -1000.0
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(480, 20)
+shape = SubResource("RectangleShape2D_xhc1p")
